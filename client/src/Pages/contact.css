@@ -1,0 +1,98 @@
+/* Basic fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #dbeafe, #e0c3fc);
+  min-height: 100vh;
+}
+
+/* Wrapper to center the form */
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* Contact form styling */
+.contact-form {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input and textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  outline: none;
+}
+
+/* CAPTCHA row */
+.captcha-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Submit button */
+.contact-form button {
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #4338ca;
+}
+
+/* Status message */
+.status {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}

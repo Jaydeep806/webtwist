@@ -1,0 +1,75 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.home-container {
+  background-image: url('./assets/Home.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Overlay for text */
+.overlay {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+/* Animations */
+h1, p, button {
+  margin: 1rem 0;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.5s;
+}
+
+.delay-2 {
+  animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  background-color: #ff7f50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff5722;
+}
