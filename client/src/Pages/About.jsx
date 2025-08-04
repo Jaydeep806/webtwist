@@ -9,7 +9,7 @@ const About = () => {
   useEffect(() => {
     const fetchAbout = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/about');
+        const res = await fetch('https://webtwist.onrender.com/api/about');
         const data = await res.json();
         setContent(data.content);
       } catch (err) {
