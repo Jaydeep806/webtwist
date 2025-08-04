@@ -145,10 +145,12 @@ const Blog = () => {
         {blogs.map(blog => (
           <article key={blog._id} className="blog-card">
             {blog.image && (
-              <Link to={`/blog/${blog.slug}`}>
-                <img src={blog.image} alt={blog.title} className="blog-image" />
+              <div className="blog-image-container">
+              <Link to={`/blog/${blog.slug}`} className="image-link">
+               <img src={blog.image} alt={blog.title} className="blog-image-element" />
               </Link>
-            )}
+        </div>
+)}
             
             <div className="blog-content">
               <div className="blog-tags">

@@ -1,12 +1,15 @@
 /* BlogDetail.css */
+
+/* Container */
 .blog-detail-container {
-  max-width: 800px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
 }
 
+/* Loading & Error */
 .loading {
   text-align: center;
   padding: 100px 20px;
@@ -24,24 +27,23 @@
   margin-bottom: 20px;
 }
 
-/* Navigation */
-.blog-nav {
-  margin-bottom: 30px;
-}
-
+/* Back Link Button */
 .back-link {
   display: inline-flex;
   align-items: center;
-  color: #007bff;
-  text-decoration: none;
+  color: white;
+  background-color: #007bff;
+  padding: 8px 16px;
+  border-radius: 8px;
   font-weight: 500;
-  padding: 10px 0;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 
 .back-link:hover {
-  color: #0056b3;
-  text-decoration: none;
+  background-color: #0056b3;
 }
 
 /* Blog Detail */
@@ -64,7 +66,8 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  margin-right: 19px;
 }
 
 .tag {
@@ -79,10 +82,10 @@
 }
 
 .blog-header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: #212529;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   line-height: 1.2;
 }
 
@@ -90,9 +93,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   color: #6c757d;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
 }
 
@@ -140,7 +143,6 @@
   font-size: 16px;
   line-height: 1.8;
   color: #333;
-  max-width: none;
 }
 
 .blog-text p {
@@ -228,25 +230,65 @@
 
 .share-buttons {
   display: flex;
-  gap: 10px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
+/* Common Button Styles */
 .share-btn {
-  padding: 10px 20px;
+  padding: 10px 24px;
+  border-radius: 30px; /* Fully rounded pill */
+  font-weight: 600;
+  font-size: 15px;
   border: none;
-  border-radius: 25px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: all 0.3s ease;
   cursor: pointer;
-  font-size: 14px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
+
+/* Copy Link Button */
+.share-btn.copy {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+.share-btn.copy:hover {
+  background-color: #5a6268;
+}
+
+/* Twitter Button */
+.share-btn.twitter {
+  background-color: #1da1f2;
+  color: #ffffff;
+}
+
+.share-btn.twitter:hover {
+  background-color: #0d8bd9;
+}
+
+/* Facebook Button */
+.share-btn.facebook {
+  background-color: #4267b2;
+  color: #ffffff;
+}
+
+.share-btn.facebook:hover {
+  background-color: #365899;
+}
+
+/* Remove Shadows and Bouncy Effects */
+.share-btn:hover {
+  transform: none;
+  box-shadow: none;
+}
+
 
 .share-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  text-decoration: none;
 }
 
 .share-btn:first-child {
@@ -256,7 +298,6 @@
 
 .share-btn:first-child:hover {
   background: #5a6268;
-  color: white;
 }
 
 .share-btn.twitter {
@@ -266,7 +307,6 @@
 
 .share-btn.twitter:hover {
   background: #0d8bd9;
-  color: white;
 }
 
 .share-btn.facebook {
@@ -276,7 +316,6 @@
 
 .share-btn.facebook:hover {
   background: #365899;
-  color: white;
 }
 
 /* Related Posts */
@@ -293,6 +332,34 @@
   margin-bottom: 30px;
   text-align: center;
 }
+.blog-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  height: auto;
+}
+
+/* Make the Link a flex wrapper too (optional if needed) */
+.image-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The Image Styling */
+.blog-image-element {
+  height: 150px;
+  width: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-image-element:hover {
+  transform: scale(1.05);
+}
+
 
 .related-grid {
   display: grid;
@@ -314,8 +381,6 @@
 .related-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  text-decoration: none;
-  color: inherit;
 }
 
 .related-card img {
@@ -358,40 +423,40 @@
   .blog-detail-container {
     padding: 10px;
   }
-  
+
   .blog-header {
     padding: 30px 20px 15px;
   }
-  
+
   .blog-header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
-  
+
   .blog-content {
     padding: 0 20px 30px;
   }
-  
+
   .blog-footer {
     padding: 20px;
   }
-  
+
   .blog-meta {
     flex-direction: column;
     gap: 8px;
   }
-  
+
   .share-buttons {
     justify-content: center;
   }
-  
+
   .related-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .blog-text {
     font-size: 15px;
   }
-  
+
   .blog-excerpt {
     font-size: 1.1rem;
     padding: 15px;
@@ -400,27 +465,24 @@
 
 @media (max-width: 480px) {
   .blog-header h1 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
-  
-  .blog-hero h1 {
-    font-size: 2rem;
-  }
-  
+
   .blog-tags {
     justify-content: flex-start;
   }
-  
+
   .tag {
     font-size: 11px;
     padding: 4px 10px;
   }
-  
+
   .share-buttons {
     flex-direction: column;
   }
-  
+
   .share-btn {
+    width: 100%;
     text-align: center;
   }
 }

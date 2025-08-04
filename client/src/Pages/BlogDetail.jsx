@@ -65,7 +65,7 @@ const BlogDetail = () => {
     return (
       <div className="error-container">
         <h2>{error}</h2>
-        <Link to="/blog" className="back-link">← Back to Blog</Link>
+        <Link to="/blogs" className="back-link">← Back to Blog</Link>
       </div>
     );
   }
@@ -74,7 +74,7 @@ const BlogDetail = () => {
     return (
       <div className="error-container">
         <h2>Blog post not found</h2>
-        <Link to="/blog" className="back-link">← Back to Blog</Link>
+        <Link to="/blogs" className="back-link">← Back to Blog</Link>
       </div>
     );
   }
@@ -84,7 +84,7 @@ const BlogDetail = () => {
       <article className="blog-detail">
         {/* Back Navigation */}
         <div className="blog-nav">
-          <Link to="/blog" className="back-link">← Back to Blog</Link>
+          <Link to="/blogs" className="back-link">← Back to Blog</Link>
         </div>
 
         {/* Blog Header */}

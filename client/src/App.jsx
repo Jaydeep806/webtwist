@@ -17,6 +17,7 @@ import AdminDashboard from './Pages/AdminLogin';
 import ProtectedRoute from './Component/ProtectedRoute';
 import Navbar from './Component/Navbar';
 import { AuthProvider } from './context/AuthContext';
+import BlogDetail from './Pages/BlogDetail';
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
+
           <Route 
             path="/admin" 
             element={
@@ -44,6 +47,8 @@ function App() {
               </ProtectedRoute>
             } 
           />
+          {/* <Route path="/blog/:slug" element={<BlogDetail />} /> */}
+
         </Routes>
       </AuthProvider>
     </Router>
