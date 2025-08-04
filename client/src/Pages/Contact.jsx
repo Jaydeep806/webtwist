@@ -18,7 +18,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/contact', { ...form, captchaExpected });
+      await axios.post('https://webtwist.onrender.com/api/contact', { ...form, captchaExpected });
       setStatus('✅ Message sent!');
       setForm({ name: '', email: '', message: '', captchaInput: '' });
     } catch (err) {
