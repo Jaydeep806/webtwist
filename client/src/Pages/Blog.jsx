@@ -22,7 +22,7 @@ const Blog = () => {
   const fetchBlogs = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/blog`, {
+      const response = await axios.get(`https://webtwist.onrender.com/api/blog`, {
         params: {
           page: currentPage,
           limit: 6,
@@ -52,7 +52,7 @@ const Blog = () => {
 
   const fetchFeaturedBlogs = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/blog/featured`);
+      const response = await axios.get(`https://webtwist.onrender.com/api/blog/featured`);
       setFeaturedBlogs(response.data);
     } catch (error) {
       console.error('Error fetching featured blogs:', error);
