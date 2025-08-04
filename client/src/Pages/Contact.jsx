@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Contact.css'; // 👈 Add this line
+import './contact.css'; // 👈 Add this line
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '', captchaInput: '' });
