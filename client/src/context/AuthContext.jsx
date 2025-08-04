@@ -32,7 +32,7 @@ export const AuthProvider = ({ children }) => {
       const storedToken = localStorage.getItem('adminToken');
       if (storedToken) {
         try {
-          const response = await axios.get('http://localhost:5000/api/auth/verify');
+          const response = await axios.get('https://webtwist.onrender.com/api/auth/verify');
           if (response.data.success) {
             setUser(response.data.user);
             setToken(storedToken);
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('https://webtwist.onrender.com/api/auth/login', {
         email,
         password
       });
@@ -80,7 +80,7 @@ export const AuthProvider = ({ children }) => {
 
   const signup = async (email, password) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/signup', {
+      const response = await axios.post('https://webtwist.onrender.com/api/auth/signup', {
         email,
         password
       });
