@@ -25,7 +25,7 @@ const BlogDetail = () => {
   const fetchBlog = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/blog/${slug}`);
+      const response = await axios.get(`https://webtwist.onrender.com/api/blog/${slug}`);
       setBlog(response.data);
       setError('');
     } catch (error) {
@@ -45,7 +45,7 @@ const BlogDetail = () => {
       // Get blogs with similar tags
       const tag = blog.tags[0];
       if (tag) {
-        const response = await axios.get(`http://localhost:5000/api/blog`, {
+        const response = await axios.get(`https://webtwist.onrender.com/api/blog`, {
           params: { tag, limit: 3 }
         });
         // Filter out current blog
