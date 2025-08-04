@@ -28,7 +28,7 @@ const AdminLogin = () => {
 
   // Fetch About content
   useEffect(() => {
-    fetch('http://localhost:5000/api/about')
+    fetch('https://webtwist.onrender.com/api/about')
       .then(res => res.json())
       .then(data => setContent(data.content))
       .catch(err => console.error('Error fetching about content:', err));
@@ -47,7 +47,7 @@ const AdminLogin = () => {
   }, [activeTab]);
 
   const fetchContacts = () => {
-    axios.get("http://localhost:5000/api/contact")
+    axios.get("https://webtwist.onrender.com/api/contact")
       .then(res => {
         const updatedContacts = res.data.map(item => ({
           ...item,
@@ -62,7 +62,7 @@ const AdminLogin = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/blog/admin/all');
+      const response = await axios.get('https://webtwist.onrender.com/api/blog/admin/all');
       setBlogs(response.data);
     } catch (error) {
       console.error('Error fetching blogs:', error);
@@ -72,7 +72,7 @@ const AdminLogin = () => {
   // Save About content
   const handleSave = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/about', {
+      const res = await fetch('https://webtwist.onrender.com/api/about', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ content })
@@ -92,7 +92,7 @@ const AdminLogin = () => {
   // Update contact message
   const handleEdit = async (id, message) => {
     try {
-      await axios.put(`http://localhost:5000/api/contact/${id}`, { message });
+      await axios.put(`https://webtwist.onrender.com/api/contact/${id}`, { message });
       alert("Message updated successfully");
       fetchContacts();
     } catch (err) {
@@ -105,7 +105,7 @@ const AdminLogin = () => {
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this contact message?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/contact/${id}`);
+        await axios.delete(`https://webtwist.onrender.com/api/contact/${id}`);
         alert("Message deleted successfully");
         fetchContacts();
       } catch (err) {
@@ -141,10 +141,10 @@ const AdminLogin = () => {
       };
 
       if (editingBlog) {
-        await axios.put(`http://localhost:5000/api/blog/admin/${editingBlog._id}`, blogData);
+        await axios.put(`https://webtwist.onrender.com/api/blog/admin/${editingBlog._id}`, blogData);
         alert('Blog updated successfully!');
       } else {
-        await axios.post('http://localhost:5000/api/blog/admin', blogData);
+        await axios.post('https://webtwist.onrender.com/api/blog/admin', blogData);
         alert('Blog created successfully!');
       }
       
@@ -174,7 +174,7 @@ const AdminLogin = () => {
   const handleBlogDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this blog post?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/blog/admin/${id}`);
+        await axios.delete(`https://webtwist.onrender.com/api/blog/admin/${id}`);
         alert('Blog deleted successfully!');
         fetchBlogs();
       } catch (error) {
@@ -186,7 +186,7 @@ const AdminLogin = () => {
 
   const togglePublish = async (id) => {
     try {
-      await axios.patch(`http://localhost:5000/api/blog/admin/${id}/publish`);
+      await axios.patch(`https://webtwist.onrender.com/api/blog/admin/${id}/publish`);
       fetchBlogs();
     } catch (error) {
       console.error('Error toggling publish status:', error);
@@ -195,7 +195,7 @@ const AdminLogin = () => {
 
   const toggleFeatured = async (id) => {
     try {
-      await axios.patch(`http://localhost:5000/api/blog/admin/${id}/featured`);
+      await axios.patch(`https://webtwist.onrender.com/api/blog/admin/${id}/featured`);
       fetchBlogs();
     } catch (error) {
       console.error('Error toggling featured status:', error);
